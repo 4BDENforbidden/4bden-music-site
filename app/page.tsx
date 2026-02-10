@@ -10,7 +10,7 @@ export default function Home() {
   ];
 
   const logs = [
-    { date: "2026.02.10", content: "Visual recalibration // LOGO_FIX_V2" },
+    { date: "2026.02.10", content: "《Embers Fall》 80% complete" },
     { date: "2025.12.19", content: "《KBT》Released on all platforms" },
     { date: "Before", content: "music uploaded on NetEaseMusic only"},
   ];
