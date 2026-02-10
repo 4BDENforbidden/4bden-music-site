@@ -6,7 +6,7 @@ export default function Home() {
     { name: "SOUNDCLOUD", url: "https://soundcloud.com/4bden-music", color: "hover:bg-red-600" },
     { name: "SPOTIFY", url: "https://open.spotify.com/artist/5SJiExoFggHiGeyV0I1UCa", color: "hover:bg-red-600" },
     { name: "NETEASEMUSIC", url: "https://music.163.com/#/artist?id=55455835", color: "hover:bg-red-600" },
-    { name: "INSTAGRAM", url: "https://instagram.com", color: "hover:bg-red-600" },
+    { name: "INSTAGRAM", url: "https://www.instagram.com/4bdenforbidden/", color: "hover:bg-red-600" },
   ];
 
   const logs = [
