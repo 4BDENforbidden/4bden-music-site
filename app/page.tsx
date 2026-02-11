@@ -24,23 +24,23 @@ export default function Home() {
       <div className="h-1 w-full bg-red-600 shadow-[0_0_20px_rgba(255,0,0,0.9)] relative z-50"></div>
 
       <div className="max-w-6xl mx-auto px-6 py-20 relative z-10">
-        <header className="mb-24">
-          {/* 容器：使用 flex-nowrap 强制不换行，justify-between 左右拉开 */}
-          <div className="flex flex-nowrap items-center justify-between gap-4 md:gap-12 group">
+      <header className="mb-16 md:mb-24">
+          {/* 容器：手机端 vertical (col)，电脑端 horizontal (row) */}
+          <div className="flex flex-col md:flex-row items-center md:justify-between gap-8 md:gap-12 group">
             
-            {/* title */}
-            <div className="relative shrink-0">
-              <h1 className="text-[12vw] md:text-[8rem] font-black italic tracking-tighter uppercase leading-none whitespace-nowrap glitch-text">
+            {/* 标题：手机端缩小字号并居中，电脑端保持原样 */}
+            <div className="relative shrink-0 text-center md:text-left">
+              <h1 className="text-[15vw] md:text-[8rem] font-black italic tracking-tighter uppercase leading-none whitespace-nowrap glitch-text">
                 4BDEN <span className="text-white">PROD.</span>
               </h1>
-              {/* red text */}
-              <div className="absolute top-0 left-0 -z-10 text-red-900/10 text-[12vw] md:text-[8rem] font-black italic select-none blur-sm group-hover:translate-x-3 transition-transform whitespace-nowrap">
+              {/* 红色背景重影 */}
+              <div className="absolute top-0 left-0 -z-10 text-red-900/10 text-[15vw] md:text-[8rem] font-black italic select-none blur-sm group-hover:translate-x-3 transition-transform whitespace-nowrap w-full">
                 4BDEN
               </div>
             </div>
 
-            {/* Logo area */}
-            <div className="relative shrink-0 w-[150px] h-[150px] md:w-[350px] md:h-[350px]">
+            {/* Logo 区域：自适应大小，手机端居中 */}
+            <div className="relative shrink-0 w-[200px] h-[200px] md:w-[350px] md:h-[350px]">
               <Image 
                 src="/logo-icon.png"   
                 alt="4BDEN Icon"
@@ -51,10 +51,10 @@ export default function Home() {
             </div>
           </div>
           
-          {/* Status */}
-          <div className="mt-12 flex items-center gap-4 text-sm tracking-[0.3em] bg-red-950/20 p-2 w-fit border border-red-900/30">
+          {/* 状态栏：手机端居中对齐 */}
+          <div className="mt-10 md:mt-12 flex items-center justify-center md:justify-start gap-4 text-sm tracking-[0.3em] bg-red-950/20 p-2 w-full md:w-fit border border-red-900/30">
             <span className="flex h-2 w-2 rounded-full bg-red-600 animate-ping"></span>
-            <span className="text-white/60 text-xs md:text-sm uppercase italic">
+            <span className="text-white/60 text-[10px] md:text-sm uppercase italic">
               System: <span className="text-red-600 font-bold">Active</span> | Loc: <span className="text-white">CN_SERVER_01</span>
             </span>
           </div>
