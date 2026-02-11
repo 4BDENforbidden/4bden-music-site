@@ -28,18 +28,18 @@ export default function Home() {
           {/* 容器：使用 flex-nowrap 强制不换行，justify-between 左右拉开 */}
           <div className="flex flex-nowrap items-center justify-between gap-4 md:gap-12 group">
             
-            {/* 左侧：文字标题 - 使用 clamp 确保字号随屏幕缩放但不换行 */}
+            {/* title */}
             <div className="relative shrink-0">
               <h1 className="text-[12vw] md:text-[8rem] font-black italic tracking-tighter uppercase leading-none whitespace-nowrap glitch-text">
                 4BDEN <span className="text-white">PROD.</span>
               </h1>
-              {/* 红色文字重影 */}
+              {/* red text */}
               <div className="absolute top-0 left-0 -z-10 text-red-900/10 text-[12vw] md:text-[8rem] font-black italic select-none blur-sm group-hover:translate-x-3 transition-transform whitespace-nowrap">
                 4BDEN
               </div>
             </div>
 
-            {/* 右侧：Logo 区域 - 显眼且巨大 */}
+            {/* Logo area */}
             <div className="relative shrink-0 w-[150px] h-[150px] md:w-[350px] md:h-[350px]">
               <Image 
                 src="/logo-icon.png"   
@@ -51,7 +51,7 @@ export default function Home() {
             </div>
           </div>
           
-          {/* 系统状态条 */}
+          {/* Status */}
           <div className="mt-12 flex items-center gap-4 text-sm tracking-[0.3em] bg-red-950/20 p-2 w-fit border border-red-900/30">
             <span className="flex h-2 w-2 rounded-full bg-red-600 animate-ping"></span>
             <span className="text-white/60 text-xs md:text-sm uppercase italic">
@@ -60,7 +60,7 @@ export default function Home() {
           </div>
         </header>
 
-        {/* 核心链接区 */}
+        {/* Links */}
         <section className="mb-24">
           <h2 className="text-xs text-white/30 mb-6 tracking-[0.5em] uppercase border-b border-white/10 pb-2">Connect_Links</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -79,7 +79,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 动态日志 */}
+        {/* Logs */}
         <section>
           <h2 className="text-xs text-white/30 mb-6 tracking-[0.5em] uppercase border-b border-white/10 pb-2">Latest_Logs</h2>
           <div className="space-y-4 text-gray-400">
