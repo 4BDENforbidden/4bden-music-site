@@ -1,4 +1,4 @@
-"use client"; 
+﻿"use client"; 
 import Image from "next/image";
 
 export default function Home() {
@@ -16,8 +16,26 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen bg-black text-red-600 font-mono selection:bg-red-600 selection:text-white relative lofi-screen overflow-hidden">
-      {/* 视觉干扰层 */}
+    <main className="min-h-screen bg-transparent text-red-600 font-mono selection:bg-red-600 selection:text-white relative lofi-screen overflow-hidden">
+      
+      {/* video background */}
+      <div className="fixed inset-0 -z-10 overflow-hidden bg-black">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+          style={{ filter: 'brightness(0.6) contrast(1.2)' }}
+        >
+          <source src="/background.mp4" type="video/mp4" />
+        </video>
+        {/* 这里的遮罩是为了确保视频加载失败时，背景依然是黑色的 */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 pointer-events-none"></div>        
+      </div>
+
+      
+      {/* 视觉干扰层 （flicker）*/}
       <div className="fixed inset-0 pointer-events-none z-40 animate-flicker bg-red-600/5 opacity-10"></div>
 
       {/* 顶部红色发光装饰条 */}
