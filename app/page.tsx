@@ -1,8 +1,32 @@
 ﻿"use client"; 
 import Image from "next/image";
+import kbtCover from "./kbt-cover.jpg";
 import knowMyNameCover from "./know-my-name-cover.png";
+import lov3Cover from "./lov3-cover.jpg";
 
 const knowMyNameUrl = "https://soundcloud.com/4bden_sc/know-my-name-4bden-edit";
+
+const previousReleases = [
+  {
+    title: "LOV3 (4BDEN Flip)",
+    cover: lov3Cover,
+    links: [
+      { name: "SoundCloud", url: "https://soundcloud.com/4bden_sc/lov3-4bden-flip" },
+      { name: "NetEase Music", url: "https://music.163.com/#/song?id=3383693594" },
+    ],
+  },
+  {
+    title: "KBT",
+    cover: kbtCover,
+    links: [
+      { name: "Spotify", url: "https://open.spotify.com/track/0khiVD4Zz8ZYyiZxflHSgJ" },
+      { name: "SoundCloud", url: "https://soundcloud.com/4bden_sc/kbt" },
+      { name: "YouTube", url: "https://www.youtube.com/watch?v=k9ukN8LVT2A" },
+      { name: "Apple Music", url: "https://music.apple.com/us/album/kbt/1860287911?i=1860287915" },
+      { name: "NetEase Music", url: "https://music.163.com/#/song?id=3317227384" },
+    ],
+  },
+];
 
 export default function Home() {
   const musicLinks = [
@@ -102,14 +126,33 @@ export default function Home() {
               </a>
             </div>
           </article>
-          <article className="mt-4 flex flex-wrap items-center justify-between gap-4 border border-red-600/20 bg-black/80 p-5">
-            <h3 className="text-lg font-bold text-white">KBT</h3>
-            <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-red-300">
-              <a href="https://open.spotify.com/track/0khiVD4Zz8ZYyiZxflHSgJ" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-white" aria-label="Listen to KBT on Spotify">Spotify</a>
-              <a href="https://soundcloud.com/4bden_sc/kbt" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-white" aria-label="Listen to KBT on SoundCloud">SoundCloud</a>
-              <a href="https://www.youtube.com/watch?v=k9ukN8LVT2A" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-white" aria-label="Listen to KBT on YouTube">YouTube</a>
-            </div>
-          </article>
+          {previousReleases.map(({ title, cover, links }) => (
+            <article key={title} className="mt-4 grid grid-cols-[6rem_minmax(0,1fr)] items-center overflow-hidden border border-red-600/20 bg-black/80 sm:grid-cols-[9rem_minmax(0,1fr)]">
+              <Image
+                src={cover}
+                alt={`${title} cover art`}
+                sizes="(min-width: 640px) 144px, 96px"
+                className="aspect-square h-auto w-full object-cover"
+              />
+              <div className="p-4 sm:p-6">
+                <h3 className="text-lg font-bold text-white sm:text-xl">{title}</h3>
+                <div className="mt-2 flex flex-wrap gap-x-4 gap-y-2 text-sm text-red-300 sm:gap-x-5">
+                  {links.map(({ name, url }) => (
+                    <a
+                      key={name}
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-4 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-400"
+                      aria-label={`Listen to ${title} on ${name}`}
+                    >
+                      {name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
         </section>
 
         {/* Links */}
