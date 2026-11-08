@@ -1,17 +1,22 @@
 ﻿"use client"; 
 import Image from "next/image";
+import knowMyNameCover from "./know-my-name-cover.png";
+
+const knowMyNameUrl = "https://soundcloud.com/4bden_sc/know-my-name-4bden-edit";
 
 export default function Home() {
   const musicLinks = [
-    { name: "SOUNDCLOUD", url: "https://soundcloud.com/4bden-music", color: "hover:bg-red-600" },
+    { name: "SOUNDCLOUD", url: "https://soundcloud.com/4bden_sc", color: "hover:bg-red-600" },
     { name: "SPOTIFY", url: "https://open.spotify.com/artist/5SJiExoFggHiGeyV0I1UCa", color: "hover:bg-red-600" },
+    { name: "YOUTUBE", url: "https://www.youtube.com/@jiahangwu4656", color: "hover:bg-red-600" },
     { name: "NETEASEMUSIC", url: "https://music.163.com/#/artist?id=55455835", color: "hover:bg-red-600" },
     { name: "INSTAGRAM", url: "https://www.instagram.com/4bdenforbidden/", color: "hover:bg-red-600" },
   ];
 
   const logs = [
+    { date: "2026.11.08", content: "《Know My Name (4BDEN EDIT)》Released on SoundCloud" },
     { date: "2026.02.10", content: "《Embers Fall》 80% complete" },
-    { date: "2025.12.19", content: "《KBT》Released on all platforms" },
+    { date: "2025.12.19", content: "《KBT》Single released" },
     { date: "Before", content: "music uploaded on NetEaseMusic only"},
   ];
 
@@ -77,6 +82,35 @@ export default function Home() {
             </span>
           </div>
         </header>
+
+        <section aria-labelledby="releases-title" className="mb-16 md:mb-24">
+          <h2 id="releases-title" className="mb-6 border-b border-white/10 pb-2 text-xs uppercase tracking-[0.5em] text-white/60">Releases</h2>
+          <article className="grid overflow-hidden border border-red-600/30 bg-black/80 sm:grid-cols-[minmax(0,17rem)_1fr]">
+            <Image
+              src={knowMyNameCover}
+              alt="Know My Name (4BDEN EDIT) cover art"
+              sizes="(min-width: 640px) 272px, calc(100vw - 48px)"
+              className="aspect-square h-auto w-full object-cover"
+            />
+            <div className="flex flex-col items-start justify-center p-6 sm:p-8">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-red-400">Latest release · Trap / DJ Edit</p>
+              <h3 className="mt-3 text-3xl font-black uppercase leading-tight text-white md:text-5xl">
+                Know My Name <span className="block text-xl text-red-400 md:text-2xl">(4BDEN EDIT)</span>
+              </h3>
+              <a href={knowMyNameUrl} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-3 bg-red-700 px-4 py-3 text-sm font-bold text-white transition-colors hover:bg-red-600 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-400">
+                Listen on SoundCloud <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+          <article className="mt-4 flex flex-wrap items-center justify-between gap-4 border border-red-600/20 bg-black/80 p-5">
+            <h3 className="text-lg font-bold text-white">KBT</h3>
+            <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-red-300">
+              <a href="https://open.spotify.com/track/0khiVD4Zz8ZYyiZxflHSgJ" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-white" aria-label="Listen to KBT on Spotify">Spotify</a>
+              <a href="https://soundcloud.com/4bden_sc/kbt" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-white" aria-label="Listen to KBT on SoundCloud">SoundCloud</a>
+              <a href="https://www.youtube.com/watch?v=k9ukN8LVT2A" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-white" aria-label="Listen to KBT on YouTube">YouTube</a>
+            </div>
+          </article>
+        </section>
 
         {/* Links */}
         <section className="mb-24">
